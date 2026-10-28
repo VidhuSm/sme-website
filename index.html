@@ -871,7 +871,7 @@ footer a:hover{color:var(--ink)}
     e.preventDefault();
     var v = function(id){ return document.getElementById(id).value.trim(); };
     var missing = [["f-name","your name"],["f-phone","a phone number"],["f-biz","your business name"]].filter(function(x){ return !v(x[0]); });
-    if (missing.length){ err.textContent = "Please add " + missing.map(function(x){ return x[1]; }).join(", ") + "."; err.hidden = false; document.getElementById(missing[0][0]).focus(); return; }
+    if (missing.length){ var names = missing.map(function(x){ return x[1]; }); err.textContent = "Please add " + (names.length > 1 ? names.slice(0, -1).join(", ") + " and " + names[names.length - 1] : names[0]) + "."; err.hidden = false; document.getElementById(missing[0][0]).focus(); return; }
     err.hidden = true;
     var picked = Array.prototype.map.call(document.querySelectorAll("#needs input:checked"), function(c){ return c.value; });
     var msg = "Hi SME, I'd like a free Brand Scan.\n\nName: " + v("f-name") + "\nPhone: " + v("f-phone") + "\nBusiness: " + v("f-biz") +
