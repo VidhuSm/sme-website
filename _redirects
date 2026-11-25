@@ -1,0 +1,5 @@
+# Old pages from the previous site, sent to the new homepage (Cloudflare Pages)
+/about-us   /   301
+/contact    /#contact   301
+/blogs      /   301
+/blogs/*    /   301
